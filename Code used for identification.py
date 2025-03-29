@@ -52,7 +52,7 @@ def flash_slow_drought_identify(arr):
                 sequence.append(arr[i])
                 seq_indices.append(i)
                 # Determine drought type based on decline speed
-                if (sequence[0] - first_below_20_value) / first_below_20_index > 5 and all(sequence[i] > sequence[i + 1] for i in range(first_below_20_index)):
+                if (arr[seq_indices[0]-1] - first_below_20_value) / first_below_20_index > 5 and all(sequence[i] > sequence[i + 1] for i in range(first_below_20_index)):
 
                     fd_sequences.append(sequence)
                     fd_indices.append(seq_indices)
