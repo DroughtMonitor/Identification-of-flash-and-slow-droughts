@@ -1,7 +1,20 @@
+__author__ = "Weiqi Liu"
+__copyright__ = "Copyright (C) 2025 Weiqi Liu"
+__license__ = "NIEER"
+__version__ = "2025.03"
+__Reference paper__ == "Anthropogenic shift towards higher risk of flash drought over China"
+
 import pandas as pd
 import matplotlib.pyplot as plt
 plt.rcParams['font.family'] = 'Arial'
 
+def convert_rgb_to_01(rgb):
+    """将RGB值从0-255转换为0-1范围"""
+    return tuple([c / 255.0 for c in rgb])
+colors=[convert_rgb_to_01((255,130,171)),convert_rgb_to_01((255,192,203)),convert_rgb_to_01((255,69,0)), convert_rgb_to_01((255,203,173))]
+
+
+df = pd.read_csv('/home/lwq/桌面/result.csv', encoding='utf-8')
 # Define two different time ranges
 df['date'] = pd.to_datetime(df['date'])
 #a flash drough period
