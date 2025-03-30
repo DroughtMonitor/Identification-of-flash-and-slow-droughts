@@ -45,7 +45,7 @@ def flash_slow_drought_identify(arr):
                 valid = True  # Ensure there is at least one value below 20%
                 i += 1
 
-            if valid and len(sequence) >= 3:  # Ensure minimum drought duration
+            if valid and len(sequence) >= 3:  # 3 = minimum duration 4 pentad - end of a pentad
                 first_below_20_index, first_below_20_value = next(
                     ((i, x) for i, x in enumerate(sequence) if x < 20), (None, None)
                 )
